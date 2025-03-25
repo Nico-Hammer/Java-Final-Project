@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class RockPaperScissors{
     JFrame frame = new JFrame(); // create a JFrame to show the GUI elements
     static JLabel label = new JLabel(""); // create a JLabel to display the results of the match
+    static int wins = 0; // int to store the actual amount of wins in the streak
+    static JLabel streak = new JLabel("Win Streak: " + wins); // create a JLabel to display the win streak of the user
     /* create the JButtons for user to click which choose an option */
     JButton rock = new JButton("Rock");
     JButton paper = new JButton("Paper");
@@ -15,6 +17,7 @@ public class RockPaperScissors{
     RockPaperScissors(){
         /* set the location of the label and buttons */
         label.setBounds(30,80,350,20);
+        streak.setBounds(155,20,80,25);
         rock.setBounds(30,50,100,20);
         paper.setBounds(140,50,100,20);
         scissors.setBounds(250,50,100,20);
@@ -41,7 +44,7 @@ public class RockPaperScissors{
             }
         });
         /* add the elements to the frame and set some settings of the frame */
-        frame.add(label);
+        frame.add(label);frame.add(streak);
         frame.add(rock);frame.add(paper);frame.add(scissors);
         frame.setSize(400,300);
         frame.setLayout(null);
@@ -65,9 +68,13 @@ public class RockPaperScissors{
         switch(choice){
             case "Rock":
                 if(CompChoice == "Paper"){
+                    wins = 0;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Lose");
                 }
                 else if(CompChoice == "Scissors"){
+                    wins += 1;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Win");
                 }
                 else{
@@ -79,20 +86,28 @@ public class RockPaperScissors{
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | Its a Tie");
                 }
                 else if(CompChoice == "Scissors"){
+                    wins = 0;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Lose");
                 }
                 else{
+                    wins += 1;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Win");
                 }
                 break;
             case "Scissors":
                 if(CompChoice == "Paper"){
+                    wins += 1;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Win");
                 }
                 else if(CompChoice == "Scissors"){
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | Its a Tie");
                 }
                 else{
+                    wins = 0;
+                    streak.setText("Win Streak: " + wins);
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Lose");
                 }
                 break;
