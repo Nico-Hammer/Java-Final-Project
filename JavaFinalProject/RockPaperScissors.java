@@ -17,7 +17,7 @@ public class RockPaperScissors{
     RockPaperScissors(){
         /* set the location of the label and buttons */
         label.setBounds(30,80,350,20);
-        streak.setBounds(155,20,80,25);
+        streak.setBounds(155,20,110,25);
         rock.setBounds(30,50,100,20);
         paper.setBounds(140,50,100,20);
         scissors.setBounds(250,50,100,20);
