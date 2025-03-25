@@ -16,7 +16,7 @@ public class RockPaperScissors{
     static String choice = ""; // initialize a string to hold the user choice
     RockPaperScissors(){
         /* set the location of the label and buttons */
-        label.setBounds(30,80,350,20);
+        label.setBounds(30,80,400,20);
         streak.setBounds(155,20,110,25);
         rock.setBounds(30,50,100,20);
         paper.setBounds(140,50,100,20);
@@ -46,7 +46,7 @@ public class RockPaperScissors{
         /* add the elements to the frame and set some settings of the frame */
         frame.add(label);frame.add(streak);
         frame.add(rock);frame.add(paper);frame.add(scissors);
-        frame.setSize(400,300);
+        frame.setSize(450,300);
         frame.setLayout(null);
         frame.setVisible(true);
 }
@@ -69,7 +69,7 @@ public class RockPaperScissors{
             case "Rock":
                 if(CompChoice == "Paper"){
                     wins = 0;
-                    streak.setText("Win Streak: " + wins);
+                    streak.setText("Win Streak: " + wins); // This updates the Win Streak Text
                     label.setText("You chose " + choice + " | Computer chose " + CompChoice + " | You Lose");
                 }
                 else if(CompChoice == "Scissors"){
