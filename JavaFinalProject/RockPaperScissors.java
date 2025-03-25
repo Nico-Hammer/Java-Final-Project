@@ -41,7 +41,7 @@ public class RockPaperScissors{
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         leaderboardTable = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(leaderboardTable);
-        scrollPane.setBounds(30, 120, 300, 100);
+        scrollPane.setBounds(40, 120, 300, 100);
         // Load top streaks from file
         loadTopStreaks();
         // add the listener to the jbuttons to handle the "pressed" event
@@ -71,7 +71,7 @@ public class RockPaperScissors{
         frame.add(label);frame.add(streak);
         frame.add(scrollPane);
         frame.add(rock);frame.add(paper);frame.add(scissors);
-        frame.setSize(450,300);
+        frame.setSize(390,300);
         frame.setLayout(null);
         frame.setVisible(true);
 }
